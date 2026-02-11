@@ -125,7 +125,7 @@ Este projeto possui integração com GitHub Actions, executando os testes automa
 Thales Barbosa
 📌 QA / Automação de Testes
 
-🔗 LinkedIn: (adicione aqui seu linkedin)
+🔗 LinkedIn: https://www.linkedin.com/in/thales-de-lima-barbosa
 🔗 GitHub: https://github.com/FalcoNzada
 
 
