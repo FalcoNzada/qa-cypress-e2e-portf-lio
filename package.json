@@ -1,0 +1,17 @@
+{
+  "name": "qa-cypress-e2e-portf-lio",
+  "version": "1.0.0",
+  "description": "Projeto de portfólio Cypress SauceDemo",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^15.10.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
+  }
+}
