@@ -1,132 +1,72 @@
-# 🚀 Cypress E2E Automation Portfolio
+🚀 Cypress E2E Automation Portfolio - SauceDemo
+Este projeto demonstra a aplicação de automação de testes End-to-End (E2E) no site SauceDemo, utilizando o framework Cypress. O objetivo é validar fluxos críticos de negócio aplicando padrões de arquitetura profissional como o Page Object Model (POM) e Data-Driven Testing.
 
-Este projeto foi desenvolvido com o objetivo de demonstrar habilidades em **automação de testes E2E (End-to-End)** utilizando **Cypress**, aplicando boas práticas usadas no dia a dia de times de QA.
+🧪 Tecnologias e Padrões Utilizados
+Cypress: Framework principal de automação.
 
-O projeto cobre fluxos reais de aplicação, validações funcionais e testes negativos, além de integração com pipeline CI/CD via **GitHub Actions**.
+JavaScript (ES6+): Linguagem base para os scripts.
 
----
+Page Object Model (POM): Organização de elementos e ações por página para facilitar a manutenção.
 
-## 🧪 Tecnologias utilizadas
+Fixtures: Utilização de arquivos JSON para massa de dados de teste.
 
-- Cypress
-- JavaScript
-- Node.js
-- Mochawesome (Relatórios)
-- GitHub Actions (CI/CD)
+Custom Commands: Comandos personalizados para ações repetitivas como Login.
 
----
+Mochawesome: Geração de relatórios interativos em HTML.
 
-## 📌 Cenários automatizados
+📌 Cenários Automatizados
+🔐 Login e Autenticação
+Login com sucesso: Validado via comandos customizados e via POM.
 
-### 🔐 Login
-✅ Login com sucesso  
-✅ Login com senha inválida  
-✅ Login com campos vazios  
-✅ Validação de mensagens de erro  
+Testes Negativos: Validação de senha inválida, campos vazios e usuário bloqueado (locked_out_user).
 
-### 📝 Cadastro
-✅ Cadastro de usuário válido  
-✅ Validação de campos obrigatórios  
-✅ Cadastro com email inválido  
+Segurança: Garantia de que o acesso às áreas internas é bloqueado após o Logout.
 
-### 🛒 Fluxo de Compra (E-commerce)
-✅ Adicionar produto ao carrinho  
-✅ Remover produto do carrinho  
-✅ Finalizar checkout  
-✅ Validar total da compra  
+🛒 Fluxo de Compra e Checkout
+Gerenciamento de Carrinho: Adição de produtos e validação do contador dinâmico.
 
-### 🌐 Testes com API
-✅ Validação de status code e response body  
-✅ Criação de massa via API (quando aplicável)    
-✅ Integração UI + API  
+Checkout Completo: Preenchimento de informações de envio e confirmação final da compra com sucesso.
 
----
+📂 Estrutura do Projeto
+Abaixo, a organização das pastas baseada no padrão implementado:
 
-## 📂 Estrutura do projeto
-
-```bash
 cypress/
-  e2e/
-    login/
-    cadastro/
-    checkout/
-  fixtures/
-  support/
-    commands.js
-    e2e.js ```
-⚙️ Pré-requisitos
+  ├── e2e/                 # Scripts de teste (.cy.js)
+  │   ├── login/           # Testes de checkout e login
+  │   ├── Fluxos/          # Fluxos de segurança e sessao
+  ├── fixtures/            # Massa de dados (user.json)
+  ├── pages/               # Page Objects (LoginPage.js, ProductsPage.js)
+  ├── support/             # Commands.js e configurações globais
+cypress.config.js          # Configurações do Cypress e Reporter
+package.json               # Dependências e scripts de execução
 
-Antes de iniciar, você precisa ter instalado:
+▶️ Como Rodar os Testes
+Pré-requisitos
+Node.js instalado.
 
-Node.js (versão recomendada 18+)
+Instalação das dependências: npm install.
 
-Git
+Execução dos Testes
+Modo Interativo (UI):
 
-Visual Studio Code (opcional)
+Bash
 
-📥 Instalação
+npm run cypress:open
+Modo Headless (Terminal):
 
-Clone o projeto:
+Bash
 
-```bash
-git clone https://github.com/SEU_USUARIO/NOME_DO_REPO.git ```
+npm run test
+📊 Relatórios de Teste (Mochawesome)
+Este projeto gera automaticamente relatórios visuais após a execução. Para gerar o relatório completo unido (Merge), utilize:
 
-Entre na pasta:
+Bash
 
-```bash
-cd NOME_DO_REPO ```
+npm run test:report
+O relatório final em HTML estará disponível em: cypress/reports/html/mochawesome.html.
 
-Instale as dependências:
-
-```bash
-npm install ```
-
-▶️ Como rodar os testes
-Rodar no modo Headless (terminal)
-```bash
-npx cypress run ```
-
-Rodar no modo interativo
-```bash
-npx cypress open ```
-
-📊 Relatórios (Mochawesome)
-
-Após rodar os testes, o relatório será gerado automaticamente em:
-```bash
-cypress/reports/html/index.html```
-
-
-Para abrir o relatório:
-
-Vá até a pasta do projeto
-
-Abra o arquivo index.html no navegador
-
-🤖 Pipeline CI/CD (GitHub Actions)
-
-Este projeto possui integração com GitHub Actions, executando os testes automaticamente em:
-
-✅ Push na branch main
-✅ Pull Requests
-
-🏆 Boas práticas aplicadas
-
-✔ Uso de seletores estáveis (data-cy)
-✔ Commands customizados (support/commands.js)
-✔ Separação por módulos (login, cadastro, checkout)
-✔ Fixtures para massa de dados
-✔ Testes negativos e positivos
-✔ Relatórios automatizados
-✔ Execução em CI/CD
-
-👨‍💻 Autor
-
-Thales Barbosa
-📌 QA / Automação de Testes
-
+👨‍💻 Autor: Thales Barbosa
 🔗 LinkedIn: https://www.linkedin.com/in/thales-de-lima-barbosa
-🔗 GitHub: https://github.com/FalcoNzada
 
 
 
