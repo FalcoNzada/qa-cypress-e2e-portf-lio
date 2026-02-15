@@ -1,72 +1,140 @@
 🚀 Cypress E2E Automation Portfolio - SauceDemo
-Este projeto demonstra a aplicação de automação de testes End-to-End (E2E) no site SauceDemo, utilizando o framework Cypress. O objetivo é validar fluxos críticos de negócio aplicando padrões de arquitetura profissional como o Page Object Model (POM) e Data-Driven Testing.
+
+Este projeto demonstra a automação de testes End-to-End (E2E) na aplicação SauceDemo, utilizando o framework Cypress.
+O objetivo é validar fluxos críticos de negócio aplicando boas práticas de arquitetura e padrões profissionais, como Page Object Model (POM) e Data-Driven Testing.
 
 🧪 Tecnologias e Padrões Utilizados
-Cypress: Framework principal de automação.
 
-JavaScript (ES6+): Linguagem base para os scripts.
+Cypress → Framework principal de automação E2E
 
-Page Object Model (POM): Organização de elementos e ações por página para facilitar a manutenção.
+JavaScript (ES6+) → Linguagem utilizada nos testes
 
-Fixtures: Utilização de arquivos JSON para massa de dados de teste.
+Page Object Model (POM) → Organização de páginas para facilitar manutenção
 
-Custom Commands: Comandos personalizados para ações repetitivas como Login.
+Fixtures (JSON) → Massa de dados reutilizável para testes
 
-Mochawesome: Geração de relatórios interativos em HTML.
+Custom Commands → Reutilização de ações repetitivas (ex: login)
+
+Mochawesome Reporter → Relatórios HTML interativos e detalhados
 
 📌 Cenários Automatizados
 🔐 Login e Autenticação
-Login com sucesso: Validado via comandos customizados e via POM.
 
-Testes Negativos: Validação de senha inválida, campos vazios e usuário bloqueado (locked_out_user).
+Login com sucesso (usuário válido)
 
-Segurança: Garantia de que o acesso às áreas internas é bloqueado após o Logout.
+Login inválido (senha errada)
+
+Login com campos vazios
+
+Login com usuário bloqueado (locked_out_user)
+
+Validação de logout e bloqueio de sessão
 
 🛒 Fluxo de Compra e Checkout
-Gerenciamento de Carrinho: Adição de produtos e validação do contador dinâmico.
 
-Checkout Completo: Preenchimento de informações de envio e confirmação final da compra com sucesso.
+Adição de produtos ao carrinho
+
+Validação do contador dinâmico do carrinho
+
+Finalização do checkout com sucesso
+
+Preenchimento de dados do comprador e confirmação do pedido
 
 📂 Estrutura do Projeto
-Abaixo, a organização das pastas baseada no padrão implementado:
 
+Estrutura baseada em organização profissional:
+
+```bash
 cypress/
-  ├── e2e/                 # Scripts de teste (.cy.js)
-  │   ├── login/           # Testes de checkout e login
-  │   ├── Fluxos/          # Fluxos de segurança e sessao
-  ├── fixtures/            # Massa de dados (user.json)
-  ├── pages/               # Page Objects (LoginPage.js, ProductsPage.js)
-  ├── support/             # Commands.js e configurações globais
-cypress.config.js          # Configurações do Cypress e Reporter
-package.json               # Dependências e scripts de execução
+  ├── e2e/                  # Scripts de teste (.cy.js)
+  │   ├── login/            # Testes relacionados ao login
+  │   ├── checkout/         # Testes relacionados ao fluxo de compra
+  │   ├── fluxos/           # Testes adicionais (sessão, segurança, etc)
+  │
+  ├── fixtures/             # Massa de dados (JSON)
+  │   └── user.json
+  │
+  ├── pages/                # Page Objects (POM)
+  │   ├── LoginPage.js
+  │   ├── ProductsPage.js
+  │   └── CheckoutPage.js
+  │
+  ├── support/              # Comandos globais e configurações
+  │   ├── commands.js
+  │   └── e2e.js
+  │
+  └── reports/              # Relatórios Mochawesome (gerados automaticamente)
+cypress.config.js           # Configurações do Cypress
+package.json                # Dependências e scripts
+```
 
-▶️ Como Rodar os Testes
-Pré-requisitos
-Node.js instalado.
+▶️ Como Rodar o Projeto
+✅ Pré-requisitos
 
-Instalação das dependências: npm install.
+Node.js instalado (recomendado versão 18+)
 
-Execução dos Testes
-Modo Interativo (UI):
+NPM ou Yarn
 
-Bash
+Editor recomendado: VS Code
 
+📥 Instalação
+
+Clone o repositório e instale as dependências:
+```bash
+npm install
+```
+
+🧪 Executando os Testes
+🔹 Modo Interativo (Cypress GUI)
+```bash
 npm run cypress:open
-Modo Headless (Terminal):
+```
 
-Bash
-
+🔹 Modo Headless (Terminal)
+```bash
 npm run test
-📊 Relatórios de Teste (Mochawesome)
-Este projeto gera automaticamente relatórios visuais após a execução. Para gerar o relatório completo unido (Merge), utilize:
+```
 
-Bash
+📊 Relatórios (Mochawesome)
 
+Após executar em modo headless, o projeto gera relatórios automaticamente.
+
+Para gerar o relatório final completo:
+
+```bash
 npm run test:report
-O relatório final em HTML estará disponível em: cypress/reports/html/mochawesome.html.
+```
 
-👨‍💻 Autor: Thales Barbosa
+
+O arquivo HTML final estará disponível em:
+
+cypress/reports/html/mochawesome.html
+
+🧠 Boas Práticas Aplicadas
+
+✔ Organização por pastas (login, checkout, fluxos)
+✔ Reutilização de código via Custom Commands
+✔ Page Objects para reduzir duplicação de seletores
+✔ Dados externos via Fixtures JSON
+✔ Relatórios profissionais com evidências
+
+📌 Melhorias Futuras (Roadmap)
+
+ Integração com CI/CD (GitHub Actions)
+
+ Execução paralela de testes
+
+ Integração com Allure Report
+
+ Testes com API + UI combinados
+
+ Implementação de Tags por suíte (@smoke, @regression)
+
+👨‍💻 Autor
+
+Thales Barbosa
+
 🔗 LinkedIn: https://www.linkedin.com/in/thales-de-lima-barbosa
 
-
+🔗 GitHub: https://github.com/FalcoNzada
 
